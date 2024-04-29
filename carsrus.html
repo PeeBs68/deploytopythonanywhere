@@ -175,7 +175,7 @@
 
     function getAllAjax(){
         $.ajax({
-            "url": "carsrus",
+            "url": "/carsrus",
             "method":"GET",
             "data":"",
             "dataType": "JSON",
@@ -193,7 +193,7 @@
     }
     function createCarAjax(car){
         $.ajax({
-            "url": "carsrus",
+            "url": "/carsrus",
             "method":"POST",
             "data":JSON.stringify(car),
             "dataType": "JSON",
