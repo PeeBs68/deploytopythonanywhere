@@ -38,7 +38,7 @@ class carsiteDAO:
     
     def getAll(self):
         cursor = self.getCursor()
-        sql="select * from car"
+        sql="select * from cars"
         cursor.execute(sql)
         result = cursor.fetchall()
         carlist = []
