@@ -59,8 +59,8 @@ class carsiteDAO:
     
     def create(self, cars):
         cursor = self.getCursor()
-        sql="insert into cars (make, model, price) values (%s,%s,%s)"
-        values = (cars.get("make"), cars.get("model"), cars.get("price"))
+        sql="insert into cars (make, model, price, colour, kilometers, fun_factor) values (%s,%s,%s,%s,%s,%s)"
+        values = (cars.get("make"), cars.get("model"), cars.get("price"), cars.get("colour"), cars.get("kilometers"), cars.get("fun_factor"))
         cursor.execute(sql, values )
         self.connection.commit()
         newid = cursor.lastrowid
@@ -71,8 +71,8 @@ class carsiteDAO:
 
     def update(self, id,  cars):
         cursor = self.getCursor()
-        sql="update cars set make = %s, model = %s, price = %s where id = %s"
-        values = (cars.get("make"), cars.get("model"), cars.get("price"), id)
+        sql="update cars set make = %s, model = %s, price = %s, colour = %s, kilometers = %s, fun_factor = %s where id = %s"
+        values = (cars.get("make"), cars.get("model"), cars.get("price"), cars.get("colour"), cars.get("kilometers"), cars.get("fun_factor"), id)
         cursor.execute(sql, values)
         self.connection.commit()
         self.closeAll()
@@ -90,7 +90,7 @@ class carsiteDAO:
 
 
     def convertToDict(self,resultLine):
-        car_Keys = ["id", "make", "model", "price"]
+        car_Keys = ["id", "make", "model", "price", "colour", "kilometers", "fun_factor"]
         currentkey = 0
         car = {}
         for attrib in resultLine:

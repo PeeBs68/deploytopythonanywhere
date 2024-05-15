@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+}
+
+#createUpdateForm {
+    display: none;
+}
+
+#carTable {
+    width: 100%;
+}
+
+#carTable, th {
+    border: 1px solid black
+}
+
+#button-div {
+    padding-top: 10px;
+}
+
+#button-showCreate:hover, #doCreateButton:hover {
+    background-color: #303030;
+    color: white;
+}
+
+#button-doUpdate:hover, #doupdateButton:hover {
+    background-color: #303030;
+    color: white;
+}
+
+table {
+    background-color: lightblue;
+  }
+
+body {
+    background-color: lightsalmon;
+  }
+
+footer {
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightblue;
+    color: black;
+    text-align: left;
+  }
+
+  p1 {
+    font-size: 10px;
+  }

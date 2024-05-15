@@ -40,6 +40,15 @@ def create():
     if "price" not in jsonstring:
         abort(401)
     car["price"] = jsonstring["price"]
+    if "colour" not in jsonstring:
+        abort(401)
+    car["colour"] = jsonstring["colour"]
+    if "kilometers" not in jsonstring:
+        abort(401)
+    car["kilometers"] = jsonstring["kilometers"]
+    if "fun_factor" not in jsonstring:
+        abort(401)
+    car["fun_factor"] = jsonstring["fun_factor"]
 
     return(jsonify(carsiteDAO.create(car)))
 
@@ -59,7 +68,12 @@ def update(id):
         car["model"] = jsonstring["model"]
     if "price" in jsonstring:
         car["price"] = jsonstring["price"]
-
+    if "colour" in jsonstring:
+        car["colour"] = jsonstring["colour"]
+    if "kilometers" in jsonstring:
+        car["kilometers"] = jsonstring["kilometers"]
+    if "fun_factor" in jsonstring:
+        car["fun_factor"] = jsonstring["fun_factor"]
     return(jsonify(carsiteDAO.update(id, car)))
 
 
