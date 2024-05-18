@@ -1,32 +1,28 @@
 # Flask Server
 # author: Phelim Barry
 
-from flask import Flask, url_for, request, redirect, abort, jsonify
+from flask import Flask, request, abort, jsonify
 from carsrus_dao import carsiteDAO
 
 app = Flask(__name__, static_url_path='', static_folder='.')
 
 @app.route('/')
 def index():
-    return("Hello there")
+    return("Nothing to see here - try adding /carsrus.html")
 
 # Get all cars
 @app.route('/carsrus', methods = ['GET'])
 def getAll():
     return jsonify(carsiteDAO.getAll())
-    # return("Get all")
-
 
 # Get car by ID
 @app.route('/carsrus/<int:id>', methods = ['GET'])
 def findbyid(id):
     return jsonify(carsiteDAO.findByID(id))
-    # return(f"Find by ID {id}")
 
 # Create a car
 @app.route('/carsrus', methods = ['POST'])
 def create():
-    # read JSON...need to test this using POSTMAN so as to add the details in JSON format
     jsonstring = request.json
     car = {}
     
@@ -55,10 +51,8 @@ def create():
 # Update a car
 @app.route('/carsrus/<int:id>', methods = ['PUT'])
 def update(id):
-    # read JSON...need to test this using POSTMAN so as to add the details in JSON format
     jsonstring = request.json
 
-    jsonstring = request.json
     car = {}
 
 # Note to self - put in some error checking of values entered/being updated
@@ -74,6 +68,7 @@ def update(id):
         car["kilometers"] = jsonstring["kilometers"]
     if "fun_factor" in jsonstring:
         car["fun_factor"] = jsonstring["fun_factor"]
+
     return(jsonify(carsiteDAO.update(id, car)))
 
 

@@ -1,9 +1,6 @@
 # DAO
 # author: Phelim Barry
 
-# Note to self - look into getting outside data (see lecture 7.1 around the 20min mark)
-# Note to self - try and use multiple tables
-
 import mysql.connector
 from config import config as cfg
 class carsiteDAO:

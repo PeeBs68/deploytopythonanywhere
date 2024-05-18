@@ -2,12 +2,11 @@
     
     <head>
         <title>Cars R Us</title>
-        <!-- CSS only -->
-        <link rel="stylesheet" href="styles.css">
-        <link integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script type="text/javascript" src="functions.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="carsrus_styles.css">
+        <link integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script type="text/javascript" src="carsrus_functions.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     </head>
     <body>
@@ -33,41 +32,26 @@
         </div>
 
         <div id='createUpdateForm' style="display: none">
-                <h2><span id="createLabel">Create a</span> <span id="updateLabel">Update</span> Car</h2>
+                <h2><span id="createLabel">Create a new</span> <span id="updateLabel">Update the selected</span> Car</h2>
                 <input type="hidden" name="id"/>
                 Make <input type="text" name="make" /><br/>
-                Model <input type="text" name="model"/> <br/>
+                Model <input type="text" size = "50" name="model"/> <br/>
                 Price <input type="number" name="price"/> <br/>
                 Colour <input type="text" name="colour"/> <br/>
                 Kilometers <input type="number" name="kilometers"/> <br/>
-                Fun_factor <input type="number" name="fun_factor"/> <br/>
+                Fun Factor <input type="number" name="fun_factor"/> <br/>
                 <span><button id="doCreateButton" onclick="doCreate()">Create</button></span>
                 <span><button id="doUpdateButton" onclick="doUpdate()">Update</button></span>
         </div>
 
-        <!--
-        <div id="createUpdateForm">
-            <h2><span id="createLabel">Create a</span><span id="updateLabel">Update</span> Car</h2>
-            <form>
-                <input type="hidden" name="id"/>
-                <label for="make">Make</label><br>
-                <input type="text" name="make" /><br/>
-                <label for="model">Model</label><br>
-                <input type="text" name="model"/> <br/>
-                <label for="price">Price</label><br>
-                <input type="number" name="price"/><br><br>
-                <input type="submit" value="Create" id="doCreateButton" onclick="doCreate()">
-            </form>
-        </div>-->
+    </body>
 
     <footer>
         <p> Thanks for visiting our site - useful links could appear here in the footer</p>   
         
-        <a href="https://www.toyota.com/">Clivk here to visit the official Toyota website!</a> 
+        <a href="https://www.toyota.com/">Click here to visit the official Toyota website!</a> 
         
-
     </footer>
 
-    </body>
     <script>getAllAjax()</script>
 </html>
